@@ -34,13 +34,26 @@ function App() {
     setCategory(selectedValue);
   };
 
+  const [isWarningActive, setWarning] = useState(false);
+
   const addExpense = (e) => {
     e.preventDefault();
-
-    dispatch({ type: "addExpense", payload: { amount, category } });
-    setAmount("");
-    setCategory("");
+    if (amount > 0 && category !== "") {
+      dispatch({ type: "addExpense", payload: { amount, category } });
+      setAmount("");
+      setCategory("");
+      setWarning(false);
+    } else {
+      setWarning(true);
+    }
   };
+
+  // const calculteExpense = () => {
+  //   const totalExpense = state.expenses.reduce(
+  //     (total, expense) => total + expense,
+  //     0
+  //   );
+  // };
 
   return (
     <div>
