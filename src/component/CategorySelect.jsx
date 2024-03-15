@@ -1,14 +1,12 @@
-// CategorySelect.jsx
 import { useState } from "react";
 
 const CategorySelect = ({ onChange }) => {
-  // Renommé selectActualisation en onChange
   const [selectValue, setSelectValue] = useState("");
 
   const handleChange = (e) => {
     const selectedValue = e.target.value;
     setSelectValue(selectedValue);
-    onChange(selectedValue); // Utilisation de onChange au lieu de selectActualisation
+    onChange(selectedValue);
   };
 
   return (

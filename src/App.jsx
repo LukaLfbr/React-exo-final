@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useReducer, useState } from "react";
-import CategorySelect from "./component/CategorySelect"; // Renommé SelectCategory en CategorySelect
+import CategorySelect from "./component/CategorySelect";
 import SelectAmount from "./component/SelectAmount";
 
 const initialState = {
@@ -45,8 +45,8 @@ function App() {
     <div>
       <form onSubmit={addExpense}>
         <SelectAmount value={amount} onChange={handleAmountChange} />
-        <CategorySelect onChange={handleCategoryChange} />{" "}
-        {/* Utiliser CategorySelect ici */}
+        <CategorySelect onChange={handleCategoryChange} />
+
         <button type="submit">Add Expense</button>
       </form>
 
