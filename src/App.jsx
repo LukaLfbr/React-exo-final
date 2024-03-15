@@ -2,6 +2,7 @@
 import React, { useReducer, useState } from "react";
 import CategorySelect from "./component/CategorySelect";
 import SelectAmount from "./component/SelectAmount";
+import "./App.css";
 
 const initialState = {
   expenses: [],
@@ -44,9 +45,10 @@ function App() {
   return (
     <div>
       <form onSubmit={addExpense}>
-        <SelectAmount value={amount} onChange={handleAmountChange} />
-        <CategorySelect onChange={handleCategoryChange} />
-
+        <div className="wrapper">
+          <SelectAmount value={amount} onChange={handleAmountChange} />
+          <CategorySelect onChange={handleCategoryChange} />
+        </div>
         <button type="submit">Add Expense</button>
       </form>
 
