@@ -48,12 +48,10 @@ function App() {
     }
   };
 
-  // const calculteExpense = () => {
-  //   const totalExpense = state.expenses.reduce(
-  //     (total, expense) => total + expense,
-  //     0
-  //   );
-  // };
+  const totalExpense = state.expenses.reduce(
+    (total, expense) => total + parseFloat(expense.amount),
+    0
+  );
 
   return (
     <div>
@@ -62,6 +60,9 @@ function App() {
           <SelectAmount value={amount} onChange={handleAmountChange} />
           <CategorySelect onChange={handleCategoryChange} />
         </div>
+        <p style={{ display: isWarningActive ? "block" : "none" }}>
+          You must enter a value and a category
+        </p>
         <button type="submit">Add Expense</button>
       </form>
 
@@ -73,6 +74,7 @@ function App() {
           </li>
         ))}
       </ul>
+      <div>Total spent : {totalExpense}</div>
     </div>
   );
 }

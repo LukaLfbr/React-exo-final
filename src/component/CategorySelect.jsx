@@ -12,6 +12,7 @@ const CategorySelect = ({ onChange }) => {
   return (
     <>
       <select name={"select"} value={selectValue} onChange={handleChange}>
+        <option value={""}>Choisir une categorie</option>
         <option value={"Alimentation"}>Alimentation</option>
         <option value={"Logement"}>Logement</option>
         <option value={"Transport"}>Transport</option>
